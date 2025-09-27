@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-namecheap",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "An n8n community node for managing Namecheap resources (Domains, DNS, SSL, Users).",
   "keywords": [
     "n8n-community-node-package",
