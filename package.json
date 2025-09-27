@@ -1,19 +1,24 @@
 {
-  "name": "n8n-nodes-<...>",
+  "name": "n8n-nodes-namecheap",
   "version": "0.1.0",
-  "description": "",
+  "description": "An n8n community node for managing Namecheap resources (Domains, DNS, SSL, Users).",
   "keywords": [
-    "n8n-community-node-package"
+    "n8n-community-node-package",
+    "namecheap",
+    "dns",
+    "domains",
+    "ssl",
+    "api"
   ],
   "license": "MIT",
-  "homepage": "",
+  "homepage": "https://github.com/n8n-io/n8n-nodes-namecheap",
   "author": {
-    "name": "",
-    "email": ""
+    "name": "n8n Community",
+    "email": "community@n8n.io"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/<...>/n8n-nodes-<...>.git"
+    "url": "https://github.com/n8n-io/n8n-nodes-namecheap.git"
   },
   "engines": {
     "node": ">=20.15"
@@ -25,6 +30,8 @@
     "format": "prettier nodes credentials --write",
     "lint": "eslint nodes credentials package.json",
     "lintfix": "eslint nodes credentials package.json --fix",
+    "test": "vitest",
+    "test:run": "vitest run",
     "prepublishOnly": "npm run build && npm run lint -c .eslintrc.prepublish.js nodes credentials package.json"
   },
   "files": [
@@ -33,21 +40,24 @@
   "n8n": {
     "n8nNodesApiVersion": 1,
     "credentials": [
-      "dist/credentials/ExampleCredentialsApi.credentials.js",
-      "dist/credentials/HttpBinApi.credentials.js"
+      "dist/credentials/NamecheapApi.credentials.js"
     ],
     "nodes": [
-      "dist/nodes/ExampleNode/ExampleNode.node.js",
-      "dist/nodes/HttpBin/HttpBin.node.js"
+      "dist/nodes/Namecheap.node.js"
     ]
   },
+  "dependencies": {
+    "xml2js": "^0.6.2"
+  },
   "devDependencies": {
+    "@types/xml2js": "^0.4.14",
     "@typescript-eslint/parser": "~8.32.0",
     "eslint": "^8.57.0",
     "eslint-plugin-n8n-nodes-base": "^1.16.3",
     "gulp": "^5.0.0",
     "prettier": "^3.5.3",
-    "typescript": "^5.8.2"
+    "typescript": "^5.8.2",
+    "vitest": "^1.0.0"
   },
   "peerDependencies": {
     "n8n-workflow": "*"
